@@ -25,9 +25,14 @@
       modules = [
         ./hosts/Baal/configuration.nix
 	inputs.home-manager.nixosModules.default
-                                #./modules/core/default.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobal.Pkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.users.username = import ./modules/core/default.nix;
+        }
       ];
     };
-
   };
 }

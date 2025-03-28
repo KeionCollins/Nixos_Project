@@ -2,10 +2,11 @@
 
 {
   imports = [
+    inputs.nix-colors.homeManagerModules.default
     ./alacritty.nix          
-  ]
+  ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
 
 }
