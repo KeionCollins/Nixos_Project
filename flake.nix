@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = { self, nixpkgs, nvf,... }@inputs: {
@@ -22,8 +23,9 @@
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
       modules = [
-        ./Baal/configuration.nix
+        ./hosts/Baal/configuration.nix
 	inputs.home-manager.nixosModules.default
+                                #./modules/core/default.nix
       ];
     };
 
